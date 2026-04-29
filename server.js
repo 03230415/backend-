@@ -4,13 +4,13 @@ const path = require("path");
 
 const app = express();
 
-// Middleware (IMPORTANT)
+// Middleware
 app.use(express.urlencoded({ extended: true }));
 
-// Serve frontend files from "public"
+// Serve frontend
 app.use(express.static("public"));
 
-// Home page route (so "/" works)
+// Home route
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "html.html"));
 });
@@ -29,11 +29,16 @@ Message: ${message}
 
   console.log(data);
 
-  // Save feedback into file
-  fs.appendFileSync("feedback.txt", data);
+  // Save to file
+  fs.appendFile("feedback.txt", data, (err) => {
+    if (err) {
+      console.error("Error saving feedback:", err);
+      return res.status(500).send("Something went wrong");
+    }
 
-  // Redirect user to success page
-  res.redirect("/success.html");
+    // Redirect after success
+    res.redirect("/success.html");
+  });
 });
 
 // Start server
