@@ -796,13 +796,14 @@
 
       /* ══════════════ FORMS ══════════════ */
       /* the form from both companies and contact section */
+      /* the input boxes react to this */
       .form-group { 
         display:flex; 
         flex-direction:column; 
         gap:0.4rem; 
         margin-bottom:1.2rem; 
       }
-      /* your location and purpose head */
+      /* your location and purpose head under companies */
       .form-group h3 { 
         font-size:0.82rem; 
         font-weight:600; 
