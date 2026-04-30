@@ -69,32 +69,6 @@ function clearForm() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // ── Contact Form ──
     // Create a function called when user submits the form
     function handleContact() {
@@ -122,31 +96,25 @@ function clearForm() {
       }
     }
 
+    const form = document.getElementById("contactForm");
+    const errorBox = document.getElementById("formError");
 
+    form.addEventListener("submit", function(e) {
+      const name = document.getElementById("cname").value.trim();
+      const email = document.getElementById("cemail").value.trim();
+      const topic = document.getElementById("ctopic").value;
+      const message = document.getElementById("cmsg").value.trim();
 
+      if (!name || !email || !topic || !message) {
+        e.preventDefault(); // stop form from submitting
 
+        errorBox.style.display = "block";
+        errorBox.textContent = "⚠️ Please fill in all fields before submitting.";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      } else {
+        errorBox.style.display = "none";
+      }
+    });
 
     // ── Company Quiz ──
     // recommendation box 
