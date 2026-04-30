@@ -816,7 +816,7 @@
       .form-group select,
       .form-group textarea {
         padding:0.75rem 1rem; 
-        border:2.5px solid rgba(13,79,92,0.2);
+        border:2.5px solid rgba(176, 195, 198, 0.2);
         border-radius:var(--radius-sm); 
         font-family:'DM Sans',sans-serif;
         font-size:0.95rem; 
@@ -836,6 +836,19 @@
       .form-group textarea { 
         resize:vertical; 
         min-height:120px;
+      }
+      .form-group label{
+        color:var(--cream);
+      }
+
+      .error-msg {
+        display: none;
+        background: #ffe5e5;
+        color: #b30000;
+        padding: 0.75rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+        font-size: 0.9rem;
       }
       /* options for purpose and location arrangement */
       .radio-group { 
